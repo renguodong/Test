@@ -1,0 +1,14 @@
+SQLPLUS scott/tiger
+--删除数据表
+DROP TABLE demo PURGE;
+DROP SEQUENCE dseq;
+--创建数据表
+CREATE SEQUENCE dseq;
+CREATE TABLE demo (
+	id		NUMBER(5),
+	name	VARCHAR2(15)	NOT NULL,
+	age		NUMBER(3)		DEFAULT 0,	
+	birthday		DATE	DEFAULT SYSDATE,
+	note	CLOB,
+	CONSTRAINT PK_ID PRIMARY KEY(id)
+);
